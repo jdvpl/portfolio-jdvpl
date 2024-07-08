@@ -69,10 +69,7 @@
                             "type": "fix",
                             "section": "This type of commit fixes bugs or issues in the codebase"
                         },
-                        {
-                            "type": "docs",
-                            "section": "A documentation commit adds or updates documentation for the codebase"
-                        },
+
                         {
                             "type": "style",
                             "section": "This type of commit is made to improve the code's style or formatting, such as renaming variables or improving code readability"
@@ -80,10 +77,6 @@
                         {
                             "type": "refactor",
                             "section": "Refactoring commits are made to improve the quality of the codebase without changing its behavior"
-                        },
-                        {
-                            "type": "test",
-                            "section": "A test commit adds or updates tests to ensure that the code is working as expected"
                         },
                         {}
                     ]
