@@ -17,8 +17,7 @@ const Experience = () => {
         <Chrono
           items={EXPERIENCE}
           mode="VERTICAL_ALTERNATING"
-          slideItemDuration={500}
-          slideShow
+          
         />
       )}
     </>
