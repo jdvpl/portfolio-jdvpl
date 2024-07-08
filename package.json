@@ -1,26 +1,94 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.4"
-  },
-  "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4"
-  }
+    "name": "portfolio",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "lint": "next lint",
+        "release": "release-it --ci",
+        "cm": "git add . && git-cz"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.11.4",
+        "@emotion/styled": "^11.11.5",
+        "@mui/icons-material": "^5.16.0",
+        "@mui/material": "^5.16.0",
+        "next": "14.2.4",
+        "react": "^18",
+        "react-chrono": "^2.6.1",
+        "react-dom": "^18"
+    },
+    "devDependencies": {
+        "@emailjs/browser": "^4.3.3",
+        "@react-three/drei": "^9.108.3",
+        "@react-three/fiber": "^8.16.8",
+        "@types/node": "^20",
+        "@types/react": "^18",
+        "@types/react-dom": "^18",
+        "eslint": "^8",
+        "eslint-config-next": "14.2.4",
+        "framer-motion": "^11.2.13",
+        "maath": "^0.10.8",
+        "postcss": "^8",
+        "react-intersection-observer": "^9.10.3",
+        "react-tilt": "^1.0.2",
+        "release-it": "^17.4.1",
+        "tailwindcss": "^3.4.1",
+        "three": "^0.166.1",
+        "typescript": "^5"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "release-it": {
+        "git": {
+            "commitMessage": "chore: release v${version}",
+            "requireUpstream": false,
+            "tag": false
+        },
+        "github": {
+            "release": false
+        },
+        "npm": {
+            "publish": false
+        },
+        "plugins": {
+            "@release-it/conventional-changelog": {
+                "infile": "CHANGELOG.md",
+                "preset": {
+                    "name": "conventionalcommits",
+                    "types": [{
+                            "type": "feat",
+                            "section": "A feature commit adds new functionality or features to the codebase"
+                        },
+                        {
+                            "type": "fix",
+                            "section": "This type of commit fixes bugs or issues in the codebase"
+                        },
+                        {
+                            "type": "docs",
+                            "section": "A documentation commit adds or updates documentation for the codebase"
+                        },
+                        {
+                            "type": "style",
+                            "section": "This type of commit is made to improve the code's style or formatting, such as renaming variables or improving code readability"
+                        },
+                        {
+                            "type": "refactor",
+                            "section": "Refactoring commits are made to improve the quality of the codebase without changing its behavior"
+                        },
+                        {
+                            "type": "test",
+                            "section": "A test commit adds or updates tests to ensure that the code is working as expected"
+                        },
+                        {}
+                    ]
+                }
+            }
+        }
+    }
 }
