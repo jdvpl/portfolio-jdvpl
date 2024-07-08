@@ -1,9 +1,10 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { slideInFromLeft, slideInFromTop } from '@/util/motion'
+import { slideInFromLeft, slideInFromRight, slideInFromTop } from '@/util/motion'
 import { SparklesIcon } from '@heroicons/react/16/solid'
 import { TypeAnimation } from 'react-type-animation'
 import clsx from 'clsx'
+import ImageLoader from '../ui/ImageLoader/ImageLoader'
 const HeroContent = () => {
   return (
     <motion.div
@@ -47,7 +48,30 @@ const HeroContent = () => {
         >
           <span className={clsx('text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500')}>the best</span> project experience
         </motion.div>
+        <motion.p
+          variants={slideInFromLeft(0.8)}
+          className='text-lg text-gray-400 my-5 max-w-[600px]'
+        >
+          I&apos;m a Full Stack Developer passionate about creating scalable web applications using React, Next.js, and Node.js. With expertise in backend technologies like NestJS and Django, I excel in microservices architecture and security implementations.
+        </motion.p>
+        <motion.a
+          variants={slideInFromLeft(1)}
+          className='py-2 button-primary text-center text-white cursor-pointer rounded-lg max-w-[200px]'
+>
+            Learn More!
+        </motion.a>
       </div>
+
+      <motion.div
+       variants={slideInFromRight(0.8)}
+       className='w-full h-full flex justify-center items-center'
+       >
+        <ImageLoader
+          src={'/assets/mainIconsdark.svg'}
+          hight={650}
+          width={650}
+        />
+      </motion.div>
 
     </motion.div>
   )

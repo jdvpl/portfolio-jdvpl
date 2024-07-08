@@ -8,7 +8,6 @@ export default function Home() {
       <div className="flex flex-col h-[850px] gap-20">
         <Hero/>
       </div>
-        <p className="font-poppins font-semibold text-3xl"> Hola mundo</p>
       <Experience/>
     </main>
   );

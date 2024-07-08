@@ -1,26 +1,118 @@
-export const  EXPERIENCE = [
+export const EXPERIENCE = [
   {
-    title: "Event 1",
-    cardTitle: "Card Title 1",
-    cardSubtitle: "Card Subtitle 1",
-    cardDetailedText: "Card Detailed Text 1",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "https://picsum.photos/id/1018/1000",
-      },
-    },
+    title: "Oct. 2022 – Current",
+    cardTitle: "Caja Social Bank - Bogota, Colombia",
+    cardSubtitle:'Full stack Developer',
+    cardDetailedText: `
+      <ul>
+        <li>Analysis and definition of product based on microservices architecture</li>
+        <li>Create frontend in next from scratch with contextApi, tailwind</li>
+        <li>Backlog administration and management of the development team.</li>
+        <li>Ensure applications security and ability to interact with multiple APIs and encrypt data</li>
+        <li>Continuous deployment with Azure DevOps</li>
+        <li>Creations of different forms with useForm in next with different validations</li>
+        <li>Testing with Jest</li>
+        <li>Developing microservices with Nest</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: Next.js, ContextAPI, Tailwind, Azure DevOps, Jest, NestJS</p>
+    `,
   },
   {
-    title: "Event 2",
-    cardTitle: "Card Title 2",
-    cardSubtitle: "Card Subtitle 2",
-    cardDetailedText: "Card Detailed Text 2",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "https://picsum.photos/id/1015/1000",
-      },
-    },
+    title: "Mar. 2021 – Dec. 2022",
+    cardTitle: "MinTic - Canal 13, Bogota, Colombia",
+    cardSubtitle:'Full stack Developer',
+    cardDetailedText: `
+      
+      <ul>
+        <li>Create some forms for Moodle platform</li>
+        <li>Create admin dashboard</li>
+        <li>Analysis and definition of product based on microservices architecture</li>
+        <li>Create backend in Node from scratch</li>
+        <li>Create frontend in React from scratch with contextApi and Redux, Bootstrap</li>
+        <li>Backlog administration and management of the development team.</li>
+        <li>Developed 5+ full-stack web applications to analyze and process data for different platforms</li>
+        <li>Ensure applications security and ability to interact with multiple APIs and databases</li>
+        <li>Work closely with app development team including project and product manager, developers, and QA to determine problems, testing methods, and best practices.</li>
+        <li>Conducted unit and load testing for high profile customer facing applications, which reduced system failure rate by 80%</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: Azure, React, Node, PHP, Docker, MySQL, Nginx</p>
+    `,
   },
-  ];
+  {
+    title: "Sep. 2021 – May. 2022",
+    cardTitle: "Energy Ministry, Bogota, Colombia",
+    cardSubtitle:'Freelancer',
+    cardDetailedText: `
+      
+      <ul>
+        <li>Develop some models managed by product owner</li>
+        <li>Solving some bugs with frontend and backend</li>
+        <li>Analysis and definition of the product</li>
+        <li>Designed and developed some layouts in HTML, JavaScript, CSS and Bootstrap</li>
+        <li>Enhanced efficiency, quality data, scope, operability, and flexibility of applications.</li>
+        <li>Solved challenging dataset problems by using ideas from distributed computing, large-scale design, real-time data processing, data storage.</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: Django, HTML, CSS, Bootstrap, JavaScript</p>
+    `,
+  },
+  {
+    title: "Nov. 2021 – Jan. 2022",
+    cardTitle: "Banitsmo, Bogota, Colombia",
+    cardSubtitle:'Full stack developer',
+    cardDetailedText: `
+      
+      <ul>
+        <li>Design and develop some layouts in Angular, HTML, JavaScript, CSS and Bootstrap</li>
+        <li>Developed and implemented a standalone data extraction "agent" and main-application features for a financial product</li>
+        <li>Optimized company’s complaint handling process by creating and delivering highly efficient app-based solutions</li>
+        <li>Database modeling in DynamoDb and MySQL</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: Angular, HTML, CSS, Bootstrap, JavaScript, NodeJS, AWS</p>
+    `,
+  },
+  {
+    title: "Dec. 2021 – Feb. 2022",
+    cardTitle: "Vivienda 360, Bogota, Colombia",
+    cardSubtitle:'Freelancer and personal project',
+    cardDetailedText: `
+      
+      <ul>
+        <li>Analysis and definition of the product</li>
+        <li>Design and develop some layouts in React, HTML, JavaScript, CSS and Bootstrap</li>
+        <li>Designed and created a knowledge management platform on a knowledge graph, utilizing a range of technologies, including Node.js, Typescript, React, chartJS</li>
+        <li>Implemented a data extraction and main-application features for a financial product with MercadoPago</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: React, HTML, CSS, Bootstrap, JavaScript, NodeJS, MercadoPago, ContextAPI</p>
+    `,
+  },
+  {
+    title: "Jan. 2020 – Mar. 2021",
+    cardTitle: "Rapid Fast, Bogota, Colombia",
+    cardSubtitle: ` Full stack developer:     
+    Tools/Technologies: React, Node, Next, Firebase, Flutter, Android, iOS, Google Cloud Platform`,
+    cardDetailedText: [`
+      <ul class="!list-disc">
+        <li>Create a web platform and mobile application with Flutter, React, Node, Firebase</li>
+        <li>Deployments in Google Cloud Console</li>
+        <li>Database modeling with Firebase</li>
+        <li>Backend service API creation</li>
+        <li>Backlog administration and management of the development team</li>
+        <li>Developed full-stack applications across various platforms using latest industry-adopted technologies and frameworks</li>
+        <li>Played a key role in the development, improvement, and operation of web-based software</li>
+        Tools/Technologies: React, Node, Next, Firebase, Flutter, Android, iOS, Google Cloud Platform
+      </ul>
+    `],
+  },
+  {
+    title: "May. 2019 – Oct. 2019",
+    cardTitle: "YoyisFood, Bogota, Colombia",
+    cardSubtitle: `Junior Developer`,
+    cardDetailedText: `
+      
+      <ul>
+        <li>Design and develop some layouts in HTML, JavaScript, CSS and Bootstrap</li>
+      </ul>
+      <p class="text-red-500">Tools/Technologies: HTML, CSS, Bootstrap, JavaScript, PHP, MySQL</p>
+    `,
+  },
+];
