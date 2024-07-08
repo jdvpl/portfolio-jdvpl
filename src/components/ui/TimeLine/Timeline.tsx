@@ -2,6 +2,8 @@
 import { EXPERIENCE } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { Chrono } from "react-chrono";
+import { motion } from 'framer-motion'
+import { slideInFromTop } from "@/util/motion";
 
 const Experience = () => {
   const [isClient, setIsClient] = useState(false);
@@ -11,11 +13,11 @@ const Experience = () => {
   }, []);
 
   return (
-    <div className="relative">
+    <motion.div className="relative z-40" variants={slideInFromTop}>
       {isClient && (
         <Chrono
         enableOutline
-        parseTitleAsHTML
+        slideShow
         parseDetailsAsHTML
         disableToolbar
           items={EXPERIENCE}
@@ -50,7 +52,7 @@ const Experience = () => {
           readMore={true}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 

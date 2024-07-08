@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Montserrat, Poppins } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
+import StartCanvas from "@/components/main/StarBackGround";
+import NavBar from "@/components/ui/NavBar/NavBar";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -71,7 +73,11 @@ export default function RootLayout({
           " bg-[#030014] overflow-y-scroll overflow-x-hidden text-white",
           montserrat.variable,
           poppins.variable,
-        )}>{children}</body>
+        )}>
+          <StartCanvas />
+          <NavBar/>
+          {children}
+          </body>
     </html>
   );
 }
