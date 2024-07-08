@@ -1,28 +1,26 @@
 export const  EXPERIENCE = [
-    {
-      title: "Event 1",
-      cardTitle: "Event 1",
-      cardSubtitle: "January 1, 2022",
-      duration: '10 days',
-      tagsList: [
-        {
-          id: 'c31b2ad8-f766-11eb-9a03-0242ac130003',
-          name: 'HTML Elements',
-        },
-    ]
+  {
+    title: "Event 1",
+    cardTitle: "Card Title 1",
+    cardSubtitle: "Card Subtitle 1",
+    cardDetailedText: "Card Detailed Text 1",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "https://picsum.photos/id/1018/1000",
+      },
     },
-    {
-      title: "Event 2",
-      cardTitle: "Event 2",
-      cardSubtitle: "February 1, 2022",
-      duration: '10 days',
-
+  },
+  {
+    title: "Event 2",
+    cardTitle: "Card Title 2",
+    cardSubtitle: "Card Subtitle 2",
+    cardDetailedText: "Card Detailed Text 2",
+    media: {
+      type: "IMAGE",
+      source: {
+        url: "https://picsum.photos/id/1015/1000",
+      },
     },
-    {
-      title: "Event 3",
-      cardTitle: "Event 3",
-      cardSubtitle: "March 1, 2022",
-      duration: '10 days',
-
-    },
+  },
   ];

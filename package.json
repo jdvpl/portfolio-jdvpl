@@ -8,7 +8,7 @@
         "start": "next start",
         "lint": "next lint",
         "release": "release-it --ci",
-        "cm": "git add . && git-cz"
+        "cz": "git add . && git-cz"
     },
     "dependencies": {
         "@emotion/react": "^11.11.4",
@@ -42,46 +42,6 @@
     "config": {
         "commitizen": {
             "path": "cz-conventional-changelog"
-        }
-    },
-    "release-it": {
-        "git": {
-            "commitMessage": "chore: release v${version}",
-            "requireUpstream": false,
-            "tag": false
-        },
-        "github": {
-            "release": false
-        },
-        "npm": {
-            "publish": false
-        },
-        "plugins": {
-            "@release-it/conventional-changelog": {
-                "infile": "CHANGELOG.md",
-                "preset": {
-                    "name": "conventionalcommits",
-                    "types": [{
-                            "type": "feat",
-                            "section": "A feature commit adds new functionality or features to the codebase"
-                        },
-                        {
-                            "type": "fix",
-                            "section": "This type of commit fixes bugs or issues in the codebase"
-                        },
-
-                        {
-                            "type": "style",
-                            "section": "This type of commit is made to improve the code's style or formatting, such as renaming variables or improving code readability"
-                        },
-                        {
-                            "type": "refactor",
-                            "section": "Refactoring commits are made to improve the quality of the codebase without changing its behavior"
-                        },
-                        {}
-                    ]
-                }
-            }
         }
     }
 }
