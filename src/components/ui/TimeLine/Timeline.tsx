@@ -3,7 +3,7 @@ import { EXPERIENCE } from "@/constants";
 import React, { useEffect, useState } from "react";
 import { Chrono } from "react-chrono";
 import { motion } from 'framer-motion'
-import { slideInFromTop } from "@/util/motion";
+import { slideInFromRight } from "@/util/motion";
 
 const Experience = () => {
   const [isClient, setIsClient] = useState(false);
@@ -13,7 +13,9 @@ const Experience = () => {
   }, []);
 
   return (
-    <motion.section id="experience" className="relative z-40 pt-20" variants={slideInFromTop}>
+    <motion.section      initial="hidden"
+      animate="visible">
+    <motion.div id="experience" className="relative z-40 pt-20" variants={slideInFromRight(1.2)}>
       {isClient && (
         <Chrono
         enableOutline
@@ -40,18 +42,13 @@ const Experience = () => {
             cardSubtitleColor: "##ECF0F1",
             cardDetailsColor: "white",
           }}
-          buttonTexts={{
-            first: "Jump to First",
-            last: "Jump to Last",
-            next: "Next",
-            previous: "Previous",
-          }}
-          cardHeight={200} 
+          cardHeight={140} 
           mediaHeight={100} 
           contentDetailsHeight={80} 
           readMore={true}
         />
       )}
+    </motion.div>
     </motion.section>
   );
 };
