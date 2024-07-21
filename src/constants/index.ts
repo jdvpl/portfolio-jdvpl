@@ -263,8 +263,8 @@ export const Frontend_skill = [
     height: 80,
   },
   {
-    skill_name: "React Query",
-    Image: "/reactquery.png",
+    skill_name: "Formik",
+    Image: "/formik.png",
     width: 80,
     height: 80,
   },
@@ -341,8 +341,8 @@ export const Full_stack = [
     height: 70,
   },
   {
-    skill_name: "Tauri",
-    Image: "/tauri.svg",
+    skill_name: "Nest",
+    Image: "/nest.png",
     width: 70,
     height: 70,
   },
@@ -354,8 +354,8 @@ export const Full_stack = [
   },
 
   {
-    skill_name: "Figma",
-    Image: "/figma.png",
+    skill_name: "Django",
+    Image: "/django.png",
     width: 50,
     height: 50,
   },
@@ -366,10 +366,10 @@ export const Full_stack = [
 
 export const Other_skill = [
   {
-    skill_name: "Go",
-    Image: "/go.png",
-    width: 60,
-    height: 60,
+    skill_name: "Aws",
+    Image: "/aws.png",
+    width: 80,
+    height: 80,
   },
 ];
 

@@ -13,7 +13,7 @@ const Experience = () => {
   }, []);
 
   return (
-    <motion.div className="relative z-40" variants={slideInFromTop}>
+    <motion.section id="experience" className="relative z-40 pt-20" variants={slideInFromTop}>
       {isClient && (
         <Chrono
         enableOutline
@@ -52,7 +52,7 @@ const Experience = () => {
           readMore={true}
         />
       )}
-    </motion.div>
+    </motion.section>
   );
 };
 
