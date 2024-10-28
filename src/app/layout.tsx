@@ -4,8 +4,9 @@ import "./globals.css";
 import clsx from "clsx";
 import StartCanvas from "@/components/main/StarBackGround";
 import NavBar from "@/components/ui/NavBar/NavBar";
+import Head from "next/head";
 
-const montserrat = Montserrat({ 
+const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
@@ -15,10 +16,11 @@ const poppins = Poppins({
   display: "swap",
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-poppins",
-})
-export const metadata:Metadata = {
+});
+export const metadata: Metadata = {
   title: "Full Stack Developer Portfolio",
-  description: "Full stack developer with 5 years of experience using React, Next.js, Node.js, NestJS, and Django. Extensive experience in microservices architecture, security implementations, and performance optimization.",
+  description:
+    "Full stack developer with 5 years of experience using React, Next.js, Node.js, NestJS, and Django. Extensive experience in microservices architecture, security implementations, and performance optimization.",
   keywords: [
     "Full Stack Developer",
     "React",
@@ -43,11 +45,14 @@ export const metadata:Metadata = {
     "Ministry of ICT",
     "Ministry of Energy",
     "Banistmo",
-    "Banco Caja Social"
+    "Banco Caja Social",
+    "JDVPL",
+    "jdvpl",
   ],
   openGraph: {
     title: "Full Stack Developer jdvpl Portfolio",
-    description: "Experienced Full Stack Developer proficient in modern web technologies and best practices.",
+    description:
+      "Experienced Full Stack Developer proficient in modern web technologies and best practices.",
     type: "website",
     url: "https://portfolio-jdvpl-m7emblvi0-juan-daniel-suarez-amados-projects.vercel.app/",
     images: [
@@ -59,7 +64,6 @@ export const metadata:Metadata = {
       },
     ],
   },
-
 };
 
 export default function RootLayout({
@@ -69,15 +73,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(
+      <Head>
+        <link rel="icon" href="/assets/NavLogo.png" />
+      </Head>
+      <body
+        className={clsx(
           " bg-[#030014] overflow-y-scroll overflow-x-hidden text-white",
           montserrat.variable,
-          poppins.variable,
-        )}>
-          <StartCanvas />
-          <NavBar/>
-          {children}
-          </body>
+          poppins.variable
+        )}
+      >
+        <StartCanvas />
+        <NavBar />
+        {children}
+      </body>
     </html>
   );
 }

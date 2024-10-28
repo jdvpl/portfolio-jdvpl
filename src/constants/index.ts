@@ -2,7 +2,7 @@ export const EXPERIENCE = [
   {
     title: "Oct. 2022 – Current",
     cardTitle: "Caja Social Bank - Bogota, Colombia",
-    cardSubtitle:'Full stack Developer',
+    cardSubtitle: "Full stack Developer",
     cardDetailedText: `
       <ul>
         <li>Analysis and definition of product based on microservices architecture</li>
@@ -20,7 +20,7 @@ export const EXPERIENCE = [
   {
     title: "Mar. 2021 – Dec. 2022",
     cardTitle: "MinTic - Canal 13, Bogota, Colombia",
-    cardSubtitle:'Full stack Developer',
+    cardSubtitle: "Full stack Developer",
     cardDetailedText: `
       
       <ul>
@@ -41,7 +41,7 @@ export const EXPERIENCE = [
   {
     title: "Sep. 2021 – May. 2022",
     cardTitle: "Energy Ministry, Bogota, Colombia",
-    cardSubtitle:'Freelancer',
+    cardSubtitle: "Freelancer",
     cardDetailedText: `
       
       <ul>
@@ -58,7 +58,7 @@ export const EXPERIENCE = [
   {
     title: "Nov. 2021 – Jan. 2022",
     cardTitle: "Banitsmo, Bogota, Colombia",
-    cardSubtitle:'Full stack developer',
+    cardSubtitle: "Full stack developer",
     cardDetailedText: `
       
       <ul>
@@ -73,7 +73,7 @@ export const EXPERIENCE = [
   {
     title: "Dec. 2021 – Feb. 2022",
     cardTitle: "Vivienda 360, Bogota, Colombia",
-    cardSubtitle:'Freelancer and personal project',
+    cardSubtitle: "Freelancer and personal project",
     cardDetailedText: `
       
       <ul>
@@ -90,7 +90,8 @@ export const EXPERIENCE = [
     cardTitle: "Rapid Fast, Bogota, Colombia",
     cardSubtitle: ` Full stack developer:     
     Tools/Technologies: React, Node, Next, Firebase, Flutter, Android, iOS, Google Cloud Platform`,
-    cardDetailedText: [`
+    cardDetailedText: [
+      `
       <ul class="!list-disc">
         <li>Create a web platform and mobile application with Flutter, React, Node, Firebase</li>
         <li>Deployments in Google Cloud Console</li>
@@ -101,7 +102,8 @@ export const EXPERIENCE = [
         <li>Played a key role in the development, improvement, and operation of web-based software</li>
         Tools/Technologies: React, Node, Next, Firebase, Flutter, Android, iOS, Google Cloud Platform
       </ul>
-    `],
+    `,
+    ],
   },
   {
     title: "May. 2019 – Oct. 2019",
@@ -117,25 +119,23 @@ export const EXPERIENCE = [
   },
 ];
 
-
-
 export const Socials = [
   {
     name: "Discord",
     src: "/instagram.svg",
+    href: "https://www.instagram.com/juanda554242/",
   },
   {
     name: "Facebook",
     src: "/facebook.svg",
+    href: "https://www.facebook.com/jdvpl",
   },
   {
-    name: "Facebook",
-    src: "/linkedin.svg",
+    name: "linkedin",
+    src: "/youtube-svgrepo-com.svg",
+    href: "https://www.youtube.com/@juandanielsuarezamado6723",
   },
-  
 ];
-
-
 
 export const Frontend_skill = [
   {
@@ -289,10 +289,19 @@ export const Full_stack = [
     width: 50,
     height: 50,
   },
-
+  {
+    skill_name: "Golang",
+    Image: "/go.png",
+    width: 80,
+    height: 80,
+  },
+  {
+    skill_name: "spring",
+    Image: "/spring.png",
+    width: 60,
+    height: 60,
+  },
 ];
-
-
 
 export const Other_skill = [
   {
@@ -308,4 +317,3 @@ export const Other_skill = [
     height: 80,
   },
 ];
-

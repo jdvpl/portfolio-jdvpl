@@ -1,32 +1,44 @@
-'use client'
-import React from 'react'
-import {motion} from 'framer-motion';
+"use client";
+import React from "react";
+import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import Image from 'next/image';
-import ImageLoader from '../ui/ImageLoader/ImageLoader';
+import Image from "next/image";
+import ImageLoader from "../ui/ImageLoader/ImageLoader";
 
-interface Props{
-    src:string;
-    width:number;
-    height:number;
-    index:number;
+interface Props {
+  src: string;
+  width: number;
+  height: number;
+  index: number;
 }
 
-const SkillDataProvider = ({src,width,height,index}:Props) => {
-    const {ref, inView}=useInView({
-        triggerOnce:true,
-    })
-    const imageVariants = {
-        hidden:{opacity:0},
-        visible:{opacity:1}
-    }
-    const animationDelay=0.3;
+const SkillDataProvider = ({ src, width, height, index }: Props) => {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+  });
+  const imageVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1 },
+  };
+  const animationDelay = 0.3;
 
   return (
-    <motion.div ref={ref} initial="hidden" variants={imageVariants} animate={inView?'visible':'hidden'} transition={{delay:index*animationDelay}}>
-        <ImageLoader src={src} width={width} height={height} alt={'skill image'} />  
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      variants={imageVariants}
+      animate={inView ? "visible" : "hidden"}
+      transition={{ delay: index * animationDelay }}
+    >
+      <ImageLoader
+        src={src}
+        width={width}
+        height={height}
+        alt={"skill image"}
+        className="min-w-[60px] min-h-[60px]"
+      />
     </motion.div>
-  )
-}
+  );
+};
 
-export default SkillDataProvider
+export default SkillDataProvider;
