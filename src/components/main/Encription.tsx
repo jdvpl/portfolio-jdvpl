@@ -1,16 +1,41 @@
+'use client'
 import { slideInFromTop } from "@/util/motion";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import ImageLoader from "../ui/ImageLoader/ImageLoader";
 import { TypeAnimation } from "react-type-animation";
 
-const Encription = () => {
+const Encription = memo(() => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    if (containerRef.current) {
+      observer.observe(containerRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="flex flex-row relative items-center justify-center w-full h-full min-h-screen mt-20">
+    <div ref={containerRef} className="hidden dark:flex flex-row relative items-center justify-center w-full h-full min-h-screen mt-20">
       <div className="absolute w-auto h-auto top-0 z-[20]">
         <motion.div
           variants={slideInFromTop}
-          className="text-[40px] font-medium text-center text-gray-200 z-40"
+          className="text-[40px] font-medium text-center text-gray-800 dark:text-gray-200 z-40"
         >
           Performance
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-cyan-500">
@@ -35,9 +60,9 @@ const Encription = () => {
             className="z-10"
           />
         </div>
-        <div className="Welcome-box px-[15px] py-1  border z-[20] border-[#7042f88b] mt-10 opacity-[0.9]">
+        <div className="Welcome-box px-[15px] py-1 border z-[20] border-purple-400 dark:border-[#7042f88b] mt-10 opacity-[0.9] bg-white/70 dark:bg-transparent">
           <TypeAnimation
-            className="Welcome-text text-[15px]"
+            className="Welcome-text text-[15px] !text-purple-900 dark:!text-white"
             sequence={[
               "Encryption",
               1000,
@@ -66,24 +91,29 @@ const Encription = () => {
       </div>
 
       <div className="absolute z-[20] bottom-1 px-[5px]">
-        <div className="cursive text-[20px] text-gray-300  mt-2 text-center font-medium">
+        <div className="cursive text-[20px] text-gray-800 dark:text-gray-300 mt-2 text-center font-medium">
           Secure your data with end-to-end encryption
         </div>
       </div>
 
       <div className="w-full flex items-start justify-center absolute">
-        <video
-          loop
-          muted
-          autoPlay
-          playsInline
-          preload="false"
-          className="w-full h-auto"
-          src="/assets/encryption.webm"
-        />
+        {isVisible && (
+          <video
+            ref={videoRef}
+            loop
+            muted
+            autoPlay
+            playsInline
+            preload="metadata"
+            className="w-full h-auto hidden dark:block"
+            src="/assets/encryption.webm"
+          />
+        )}
       </div>
     </div>
   );
-};
+});
+
+Encription.displayName = 'Encription';
 
 export default Encription;

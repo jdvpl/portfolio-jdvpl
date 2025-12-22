@@ -10,6 +10,19 @@
 .Welcome-text {
   background: linear-gradient(
       0deg,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    linear-gradient(90.01deg, #d97706 0.01%, #b45309 50.01%, #92400e 100%);
+  background-blend-mode: normal, screen;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .Welcome-text {
+  background: linear-gradient(
+      0deg,
       rgba(255, 255, 255, 0.4),
       rgba(255, 255, 255, 0.4)
     ),

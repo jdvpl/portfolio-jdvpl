@@ -3,9 +3,9 @@ import { RxGithubLogo, RxTwitterLogo, RxLinkedinLogo } from "react-icons/rx";
 import { FaYoutube, FaPhone, FaEnvelope } from "react-icons/fa";
 const Footer = () => {
   return (
-    <div className="w-full h-full bg-transparent text-gray-200 shadow-lg p-4">
+    <div className="w-full h-full bg-transparent text-gray-700 dark:text-gray-200 shadow-lg p-8 mt-20">
       <div className="flex w-full flex-col items-center justify-center m-auto">
-        <div className="flex w-full h-full flex-row items-center justify-around flex-wrap z-20">
+        <div className="flex w-full h-full flex-row items-center justify-around flex-wrap z-20 mb-8">
           <div className="min-w-[200px] h-auto flex flex-col items-center justify-start">
             <div className="font-bold text-[16px]">Community</div>
 

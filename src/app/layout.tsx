@@ -5,6 +5,8 @@ import clsx from "clsx";
 import StartCanvas from "@/components/main/StarBackGround";
 import NavBar from "@/components/ui/NavBar/NavBar";
 import Head from "next/head";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -72,20 +74,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <Head>
         <link rel="icon" href="/assets/NavLogo.png" />
       </Head>
       <body
         className={clsx(
-          " bg-[#030014] overflow-y-scroll overflow-x-hidden text-white",
+          "bg-gray-50 dark:bg-[#030014] overflow-y-scroll overflow-x-hidden text-gray-900 dark:text-white transition-colors duration-300",
           montserrat.variable,
           poppins.variable
         )}
       >
-        <StartCanvas />
-        <NavBar />
-        {children}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
+          <LanguageProvider>
+            <StartCanvas />
+            <NavBar />
+            {children}
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

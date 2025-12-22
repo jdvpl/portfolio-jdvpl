@@ -1,6 +1,28 @@
 export const EXPERIENCE = [
   {
-    title: "Oct. 2022 – Current",
+    title: "Jun. 2025 – Current",
+    cardTitle: "Blank Factor - Bogota, Colombia",
+    cardSubtitle: "Senior Frontend Developer",
+    cardDetailedText: `
+      <ul>
+        <li>Led the development of scalable frontend applications using React.js, Context API, and custom hooks</li>
+        <li>Integrated multiple REST APIs, ensuring secure data exchange and efficient error handling</li>
+        <li>Designed reusable UI components following component-driven architecture with SASS css and internal libraries</li>
+        <li>Implemented global state management solutions using Context API, reducers, and memoization to optimize performance</li>
+        <li>Collaborated with backend teams to define API contracts and improve response structure for faster rendering</li>
+        <li>Built advanced forms using Formik and Yup, including dynamic validations and conditional logic</li>
+        <li>Improved application performance through lazy loading, code splitting, and bundle optimization</li>
+        <li>Wrote unit and integration tests using Jest and React Testing Library, achieving high coverage</li>
+        <li>Participated in sprint planning, code reviews, and technical decision-making as part of an agile team</li>
+        <li>Documented UI workflows, component behavior, and integration processes for internal onboarding</li>
+        <li>Ensured accessibility compliance (WCAG) across UI components</li>
+        <li>Handled bug fixing, refactoring, and continuous improvements to enhance maintainability and scalability</li>
+      </ul>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: React.js, Context API, TypeScript, Formik, Yup, SASS, REST APIs, GraphQL, Jest, React Testing Library, Git, Azure DevOps</p>
+    `,
+  },
+  {
+    title: "Oct. 2022 – Apr. 2025",
     cardTitle: "Caja Social Bank - Bogota, Colombia",
     cardSubtitle: "Full stack Developer",
     cardDetailedText: `
@@ -14,7 +36,7 @@ export const EXPERIENCE = [
         <li>Testing with Jest</li>
         <li>Developing microservices with Nest</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: Next.js, ContextAPI, Tailwind, Azure DevOps, Jest, NestJS</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: Next.js, ContextAPI, Tailwind, Azure DevOps, Jest, NestJS</p>
     `,
   },
   {
@@ -35,7 +57,7 @@ export const EXPERIENCE = [
         <li>Work closely with app development team including project and product manager, developers, and QA to determine problems, testing methods, and best practices.</li>
         <li>Conducted unit and load testing for high profile customer facing applications, which reduced system failure rate by 80%</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: Azure, React, Node, PHP, Docker, MySQL, Nginx</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: Azure, React, Node, PHP, Docker, MySQL, Nginx</p>
     `,
   },
   {
@@ -52,7 +74,7 @@ export const EXPERIENCE = [
         <li>Enhanced efficiency, quality data, scope, operability, and flexibility of applications.</li>
         <li>Solved challenging dataset problems by using ideas from distributed computing, large-scale design, real-time data processing, data storage.</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: Django, HTML, CSS, Bootstrap, JavaScript</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: Django, HTML, CSS, Bootstrap, JavaScript</p>
     `,
   },
   {
@@ -67,7 +89,7 @@ export const EXPERIENCE = [
         <li>Optimized company’s complaint handling process by creating and delivering highly efficient app-based solutions</li>
         <li>Database modeling in DynamoDb and MySQL</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: Angular, HTML, CSS, Bootstrap, JavaScript, NodeJS, AWS</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: Angular, HTML, CSS, Bootstrap, JavaScript, NodeJS, AWS</p>
     `,
   },
   {
@@ -82,7 +104,7 @@ export const EXPERIENCE = [
         <li>Designed and created a knowledge management platform on a knowledge graph, utilizing a range of technologies, including Node.js, Typescript, React, chartJS</li>
         <li>Implemented a data extraction and main-application features for a financial product with MercadoPago</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: React, HTML, CSS, Bootstrap, JavaScript, NodeJS, MercadoPago, ContextAPI</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: React, HTML, CSS, Bootstrap, JavaScript, NodeJS, MercadoPago, ContextAPI</p>
     `,
   },
   {
@@ -114,7 +136,7 @@ export const EXPERIENCE = [
       <ul>
         <li>Design and develop some layouts in HTML, JavaScript, CSS and Bootstrap</li>
       </ul>
-      <p class="text-red-500">Tools/Technologies: HTML, CSS, Bootstrap, JavaScript, PHP, MySQL</p>
+      <p class="text-amber-600 dark:text-purple-400 font-semibold">Tools/Technologies: HTML, CSS, Bootstrap, JavaScript, PHP, MySQL</p>
     `,
   },
 ];
