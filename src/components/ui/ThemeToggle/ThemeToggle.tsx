@@ -2,7 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { useEffect, useState, memo } from 'react'
-import { SunIcon, MoonIcon } from '@heroicons/react/24/solid'
+import { Sun, Moon } from 'lucide-react'
 
 const ThemeToggle = memo(() => {
   const [mounted, setMounted] = useState(false)
@@ -32,10 +32,10 @@ const ThemeToggle = memo(() => {
         theme === 'dark' ? 'bg-gray-900' : 'bg-white'
       }`}>
         {theme === 'dark' ? (
-          <MoonIcon className="w-6 h-6 text-purple-500 animate-pulse" />
+          <Moon className="w-6 h-6 text-purple-500 animate-pulse" />
         ) : (
           <div className="relative">
-            <SunIcon className="w-7 h-7 text-amber-500 animate-spin-slow drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
+            <Sun className="w-7 h-7 text-amber-500 animate-spin-slow drop-shadow-[0_0_8px_rgba(251,191,36,0.6)]" />
             <div className="absolute inset-0 w-7 h-7 bg-yellow-400 rounded-full blur-md opacity-40 animate-pulse" />
           </div>
         )}

@@ -2,7 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
-import { GlobeAltIcon } from '@heroicons/react/24/outline';
+import { Globe } from 'lucide-react';
 
 type Language = 'en' | 'es' | 'it' | 'fr' | 'ja';
 
@@ -52,10 +52,10 @@ const LanguageToggle = () => {
       <button
         ref={buttonRef}
         onClick={() => setIsOpen(!isOpen)}
-        className="relative flex items-center justify-center gap-1 px-3 h-10 rounded-full bg-gradient-to-r from-amber-500 to-orange-500 dark:from-purple-500 dark:to-cyan-500 hover:from-amber-600 hover:to-orange-600 dark:hover:from-purple-600 dark:hover:to-cyan-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+        className="relative flex items-center justify-center gap-1 px-3 h-10 rounded-full bg-[linear-gradient(110deg,rgb(var(--glow-1)),rgb(var(--glow-2)))] transition-all duration-300 shadow-glow hover:opacity-90"
         aria-label="Select language"
       >
-        <GlobeAltIcon className="w-5 h-5 text-white" />
+        <Globe className="w-5 h-5 text-white" />
         <span className="text-sm font-bold text-white">{currentLanguage.flag}</span>
       </button>
 
