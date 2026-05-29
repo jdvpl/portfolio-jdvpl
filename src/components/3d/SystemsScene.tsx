@@ -121,27 +121,38 @@ function Graph({ progress }: { progress?: MotionValue<number> }) {
  * Interactive 3D systems topology. Drag to orbit, scroll to tilt/scale.
  * Rendered client-only and guarded by the consumer.
  */
-export default function SystemsScene({ progress }: { progress?: MotionValue<number> }) {
+export default function SystemsScene({
+  progress,
+  interactive = true,
+}: {
+  progress?: MotionValue<number>;
+  interactive?: boolean;
+}) {
   return (
     <Canvas
       camera={{ position: [0, 0, 9.5], fov: 42 }}
       dpr={[1, 1.6]}
       performance={{ min: 0.4 }}
       gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+      // Let the browser handle vertical scrolling over the canvas on touch.
+      style={{ touchAction: "pan-y" }}
     >
       <ambientLight intensity={0.6} />
       <pointLight position={[5, 5, 5]} intensity={2.2} color="#b3a8ff" />
       <pointLight position={[-5, -3, 2]} intensity={2} color="#38bdf8" />
       <Graph progress={progress} />
-      <OrbitControls
-        enableZoom={false}
-        enablePan={false}
-        enableDamping
-        dampingFactor={0.07}
-        rotateSpeed={0.5}
-        minPolarAngle={Math.PI / 3}
-        maxPolarAngle={(2 * Math.PI) / 3}
-      />
+      {/* Drag-to-orbit only on fine pointers (desktop); on touch the page scrolls. */}
+      {interactive && (
+        <OrbitControls
+          enableZoom={false}
+          enablePan={false}
+          enableDamping
+          dampingFactor={0.07}
+          rotateSpeed={0.5}
+          minPolarAngle={Math.PI / 3}
+          maxPolarAngle={(2 * Math.PI) / 3}
+        />
+      )}
     </Canvas>
   );
 }

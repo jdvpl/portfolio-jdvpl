@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
 import { motion, useScroll } from "framer-motion";
 import { Monitor, Network, Boxes, Database, Cpu, Cloud, MousePointer2 } from "lucide-react";
@@ -20,6 +20,11 @@ export default function Architecture() {
     target: ref,
     offset: ["start end", "end start"],
   });
+  // Drag-to-orbit only on fine pointers; touch devices keep native scroll.
+  const [interactive, setInteractive] = useState(false);
+  useEffect(() => {
+    setInteractive(window.matchMedia("(pointer: fine)").matches);
+  }, []);
 
   const legend = [
     { icon: Monitor, key: "client" as const },
@@ -69,13 +74,13 @@ export default function Architecture() {
               </div>
             }
           >
-            <SystemsScene progress={scrollYProgress} />
+            <SystemsScene progress={scrollYProgress} interactive={interactive} />
           </CanvasGuard>
 
           {/* Interaction hint */}
           <span className="pointer-events-none absolute bottom-3 left-1/2 flex -translate-x-1/2 items-center gap-2 rounded-full glass px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.2em] text-[rgb(var(--text-muted))]">
             <MousePointer2 className="h-3.5 w-3.5 text-accent" />
-            drag to orbit · scroll to explore
+            {interactive ? "drag to orbit · scroll to explore" : "scroll to explore"}
           </span>
         </div>
 
