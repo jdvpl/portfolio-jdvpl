@@ -2,9 +2,13 @@ import { Translation } from './en';
 
 export const ja: Translation = {
   nav: {
-    skills: "スキル",
-    projects: "プロジェクト",
+    home: "ホーム",
+    about: "プロフィール",
+    skills: "スタック",
     experience: "経験",
+    projects: "プロジェクト",
+    architecture: "システム",
+    contact: "コンタクト",
   },
   hero: {
     welcome: {
@@ -209,5 +213,49 @@ export const ja: Translation = {
         description: "Reactで作成されたプロジェクト"
       }
     ]
+  },
+  about: {
+    eyebrow: "プロフィール",
+    title: "スケールし、思考するシステムを設計する",
+    lead: "エレガントなフロントエンド体験と、回復力がありAIを活用したバックエンドが出会う、プロダクション品質のプラットフォームを設計・構築します。",
+    paragraphs: [
+      "銀行・行政・スタートアップで7年、実負荷でも高速を保つマイクロサービス、イベント駆動システム、クラウドインフラを構築してきました。",
+      "人工知能とソフトウェア工学の専門課程を修了し、システム設計とインターフェースの作り込み（モーション・性能・ディテール）を同じく重視しています。",
+    ],
+    stats: [
+      { value: 7, suffix: "", label: "年の経験" },
+      { value: 40, suffix: "+", label: "リリースしたシステム" },
+      { value: 12, suffix: "+", label: "エンタープライズ顧客" },
+      { value: 99, suffix: "%", label: "稼働率重視" },
+    ],
+    pillars: [
+      { title: "システムアーキテクチャ", description: "組織と共にスケールする、マイクロサービス・イベント駆動設計・クリーンな境界。" },
+      { title: "AIエンジニアリング", description: "実プロダクトに組み込まれたLLMパイプライン・検索・推論サービス。" },
+      { title: "クラウド & DevOps", description: "初日から可観測性を備えたAWS・GCP・コンテナ・CI/CD。" },
+      { title: "スケーラビリティ志向", description: "性能予算・キャッシュ戦略・既定の水平スケーリング。" },
+    ],
+  },
+  systems: {
+    eyebrow: "システム & AI",
+    title: "動くアーキテクチャ",
+    description: "分散・イベント駆動・AI駆動のシステムを、エッジから推論までどう構成するかのライブビュー。",
+    legend: {
+      client: "クライアント層",
+      gateway: "APIゲートウェイ",
+      services: "マイクロサービス",
+      data: "データ & イベント",
+      ai: "AIパイプライン",
+      cloud: "クラウド基盤",
+    },
+  },
+  contact: {
+    eyebrow: "コンタクト",
+    title: "卓越したものを一緒に作りましょう",
+    description: "シニアAIエンジニア・アーキテクトの職、アドバイザリー、意欲的なコラボレーションを歓迎します。",
+    namePlaceholder: "お名前",
+    emailPlaceholder: "your@email.com",
+    messagePlaceholder: "プロジェクトについて教えてください…",
+    submit: "メッセージを送信",
+    availability: "新規プロジェクト対応可能",
   }
 };

@@ -1,8 +1,12 @@
 export const en = {
   nav: {
-    skills: "Skills",
-    projects: "Projects",
+    home: "Home",
+    about: "About",
+    skills: "Stack",
     experience: "Experience",
+    projects: "Projects",
+    architecture: "Systems",
+    contact: "Contact",
   },
   hero: {
     welcome: {
@@ -207,6 +211,62 @@ export const en = {
         description: "Project created with React"
       }
     ]
+  },
+  about: {
+    eyebrow: "About",
+    title: "Engineering systems that scale and think",
+    lead: "I design and build production-grade platforms where elegant frontend experiences meet resilient, AI-driven backends.",
+    paragraphs: [
+      "With 7 years across enterprise banking, government and startups, I build microservices, event-driven systems and cloud infrastructure that stay fast under real load.",
+      "I hold specializations in Artificial Intelligence and Software Engineering, and I care equally about system design and the craft of the interface — motion, performance and detail.",
+    ],
+    stats: [
+      { value: 7, suffix: "", label: "Years building" },
+      { value: 40, suffix: "+", label: "Systems shipped" },
+      { value: 12, suffix: "+", label: "Enterprise clients" },
+      { value: 99, suffix: "%", label: "Uptime focus" },
+    ],
+    pillars: [
+      {
+        title: "Systems Architecture",
+        description: "Microservices, event-driven design and clean boundaries that scale with the org.",
+      },
+      {
+        title: "AI Engineering",
+        description: "LLM pipelines, retrieval and inference services wired into real products.",
+      },
+      {
+        title: "Cloud & DevOps",
+        description: "AWS, GCP, containers and CI/CD with observability built in from day one.",
+      },
+      {
+        title: "Scalability Mindset",
+        description: "Performance budgets, caching strategies and horizontal scaling by default.",
+      },
+    ],
+  },
+  systems: {
+    eyebrow: "Systems & AI",
+    title: "Architecture in motion",
+    description: "A live view of how I compose distributed, event-driven and AI-powered systems — from edge to inference.",
+    legend: {
+      client: "Client Layer",
+      gateway: "API Gateway",
+      services: "Microservices",
+      data: "Data & Events",
+      ai: "AI Pipeline",
+      cloud: "Cloud Infra",
+    },
+  },
+  contact: {
+    eyebrow: "Contact",
+    title: "Let's build something exceptional",
+    description: "Open to senior AI engineering and architecture roles, advisory and ambitious collaborations.",
+    namePlaceholder: "Your name",
+    emailPlaceholder: "your@email.com",
+    messagePlaceholder: "Tell me about your project…",
+    submit: "Send message",
+    availability: "Available for new projects",
   }
 };
 

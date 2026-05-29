@@ -1,97 +1,157 @@
-import type { Metadata } from "next";
-import { Montserrat, Poppins } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Montserrat, Poppins, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
-import StartCanvas from "@/components/main/StarBackGround";
 import NavBar from "@/components/ui/NavBar/NavBar";
-import Head from "next/head";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { LanguageProvider } from "@/contexts/LanguageContext";
+import { Providers } from "@/components/providers/Providers";
+import { ClientBackground } from "@/components/layout/ClientBackground";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
   variable: "--font-montserrat",
+  display: "swap",
 });
 const poppins = Poppins({
   subsets: ["latin"],
   display: "swap",
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-poppins",
 });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-sans",
+});
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-mono",
+});
+
+const SITE_URL = "https://portfolio-jdvpl.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Full Stack Developer Portfolio",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Juan Daniel Suárez — Senior Full Stack Developer",
+    template: "%s · JDVPL",
+  },
   description:
-    "Full stack developer with 5 years of experience using React, Next.js, Node.js, NestJS, and Django. Extensive experience in microservices architecture, security implementations, and performance optimization.",
+    "Senior Full Stack Developer with 7 years of experience building high-performance, scalable applications across React, Next.js, Node.js, NestJS, Java & Spring Boot — and a specialist in Artificial Intelligence.",
+  applicationName: "JDVPL Portfolio",
+  authors: [{ name: "Juan Daniel Suárez", url: SITE_URL }],
+  creator: "Juan Daniel Suárez",
   keywords: [
-    "Full Stack Developer",
+    "Senior AI Engineer",
+    "Full Stack Architect",
+    "Software Architect",
+    "Microservices",
+    "Distributed Systems",
+    "Event-Driven Architecture",
+    "AI Pipelines",
     "React",
     "Next.js",
     "Node.js",
     "NestJS",
-    "Django",
-    "Microservices",
-    "Security",
-    "Performance Optimization",
-    "Redux Toolkit",
-    "Tailwind CSS",
-    "Bootstrap",
-    "PostgreSQL",
-    "MongoDB",
-    "API Development",
-    "Unit Testing",
-    "End-to-End Testing",
-    "Jest",
-    "Pino",
-    "Grafana",
-    "Ministry of ICT",
-    "Ministry of Energy",
-    "Banistmo",
-    "Banco Caja Social",
+    "Cloud",
+    "AWS",
+    "GCP",
+    "TypeScript",
     "JDVPL",
     "jdvpl",
   ],
+  icons: {
+    icon: "/assets/NavLogo.png",
+    shortcut: "/assets/NavLogo.png",
+    apple: "/assets/NavLogo.png",
+  },
+  alternates: { canonical: SITE_URL },
   openGraph: {
-    title: "Full Stack Developer jdvpl Portfolio",
+    title: "Juan Daniel Suárez — Senior Full Stack Developer",
     description:
-      "Experienced Full Stack Developer proficient in modern web technologies and best practices.",
+      "Cinematic portfolio of a Senior Full Stack Developer & AI specialist. Scalable apps across front-end and back-end, with premium product engineering.",
     type: "website",
-    url: "https://portfolio-jdvpl-m7emblvi0-juan-daniel-suarez-amados-projects.vercel.app/",
+    url: SITE_URL,
+    siteName: "JDVPL Portfolio",
     images: [
       {
         url: "https://avatars.githubusercontent.com/u/62775732?v=4",
         width: 800,
-        height: 600,
-        alt: "Profile Picture",
+        height: 800,
+        alt: "Juan Daniel Suárez",
       },
     ],
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Juan Daniel Suárez — Senior Full Stack Developer",
+    description:
+      "Cinematic portfolio of a Senior Full Stack Developer & AI specialist.",
+    images: ["https://avatars.githubusercontent.com/u/62775732?v=4"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large" },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#030014" },
+    { media: "(prefers-color-scheme: light)", color: "#f5f7fb" },
+  ],
+  colorScheme: "dark light",
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Juan Daniel Suárez",
+    url: SITE_URL,
+    image: "https://avatars.githubusercontent.com/u/62775732?v=4",
+    jobTitle: "Senior Full Stack Developer",
+    sameAs: [
+      "https://github.com/jdvpl",
+      "https://linkedin.com/in/jdvpl",
+    ],
+    knowsAbout: [
+      "Full Stack Development",
+      "React",
+      "Next.js",
+      "Node.js",
+      "NestJS",
+      "Java",
+      "Spring Boot",
+      "Artificial Intelligence",
+      "Cloud",
+    ],
+    address: { "@type": "PostalAddress", addressLocality: "Bogotá", addressCountry: "CO" },
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
-      <Head>
-        <link rel="icon" href="/assets/NavLogo.png" />
-      </Head>
       <body
         className={clsx(
-          "bg-gray-50 dark:bg-[#030014] overflow-y-scroll overflow-x-hidden text-gray-900 dark:text-white transition-colors duration-300",
+          "relative min-h-screen overflow-x-hidden font-sans antialiased",
+          "bg-[rgb(var(--bg))] text-[rgb(var(--text-strong))] transition-colors duration-500",
           montserrat.variable,
-          poppins.variable
+          poppins.variable,
+          inter.variable,
+          jetbrains.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
-          <LanguageProvider>
-            <StartCanvas />
-            <NavBar />
-            {children}
-          </LanguageProvider>
-        </ThemeProvider>
+        <Providers>
+          <ClientBackground />
+          <ScrollProgress />
+          <NavBar />
+          <div className="relative z-10">{children}</div>
+        </Providers>
       </body>
     </html>
   );

@@ -40,7 +40,7 @@ const Footer = () => {
             <p className="flex flex-row items-center my-[15px] cursor-pointer">
               <FaEnvelope />
               <span className="text-[15px] ml-[15px]">
-                juanda554242@gmail.com
+                jdvplsuarez@gmail.com
               </span>
             </p>
           </div>

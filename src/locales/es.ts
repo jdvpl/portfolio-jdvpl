@@ -2,9 +2,13 @@ import { Translation } from './en';
 
 export const es: Translation = {
   nav: {
-    skills: "Habilidades",
-    projects: "Proyectos",
+    home: "Inicio",
+    about: "Perfil",
+    skills: "Stack",
     experience: "Experiencia",
+    projects: "Proyectos",
+    architecture: "Sistemas",
+    contact: "Contacto",
   },
   hero: {
     welcome: {
@@ -209,5 +213,49 @@ export const es: Translation = {
         description: "Proyecto creado con React"
       }
     ]
+  },
+  about: {
+    eyebrow: "Perfil",
+    title: "Sistemas que escalan y piensan",
+    lead: "Diseño y construyo plataformas de nivel producción donde experiencias frontend elegantes se encuentran con backends resilientes e impulsados por IA.",
+    paragraphs: [
+      "Con 7 años en banca, gobierno y startups, construyo microservicios, sistemas orientados a eventos e infraestructura cloud que se mantienen rápidos bajo carga real.",
+      "Tengo especializaciones en Inteligencia Artificial e Ingeniería de Software, y me importa por igual el diseño de sistemas y la artesanía de la interfaz: movimiento, rendimiento y detalle.",
+    ],
+    stats: [
+      { value: 7, suffix: "", label: "Años construyendo" },
+      { value: 40, suffix: "+", label: "Sistemas entregados" },
+      { value: 12, suffix: "+", label: "Clientes enterprise" },
+      { value: 99, suffix: "%", label: "Enfoque en uptime" },
+    ],
+    pillars: [
+      { title: "Arquitectura de Sistemas", description: "Microservicios, diseño orientado a eventos y límites limpios que escalan con la organización." },
+      { title: "Ingeniería de IA", description: "Pipelines de LLM, recuperación y servicios de inferencia integrados en productos reales." },
+      { title: "Cloud & DevOps", description: "AWS, GCP, contenedores y CI/CD con observabilidad desde el día uno." },
+      { title: "Mentalidad de Escalabilidad", description: "Presupuestos de rendimiento, estrategias de caché y escalado horizontal por defecto." },
+    ],
+  },
+  systems: {
+    eyebrow: "Sistemas e IA",
+    title: "Arquitectura en movimiento",
+    description: "Una vista en vivo de cómo compongo sistemas distribuidos, orientados a eventos y potenciados por IA — del edge a la inferencia.",
+    legend: {
+      client: "Capa Cliente",
+      gateway: "API Gateway",
+      services: "Microservicios",
+      data: "Datos y Eventos",
+      ai: "Pipeline de IA",
+      cloud: "Infra Cloud",
+    },
+  },
+  contact: {
+    eyebrow: "Contacto",
+    title: "Construyamos algo excepcional",
+    description: "Abierto a roles senior de ingeniería de IA y arquitectura, asesoría y colaboraciones ambiciosas.",
+    namePlaceholder: "Tu nombre",
+    emailPlaceholder: "tu@email.com",
+    messagePlaceholder: "Cuéntame sobre tu proyecto…",
+    submit: "Enviar mensaje",
+    availability: "Disponible para nuevos proyectos",
   }
 };

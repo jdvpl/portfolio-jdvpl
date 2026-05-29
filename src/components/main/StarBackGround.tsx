@@ -6,9 +6,9 @@ import * as random from "maath/random/dist/maath-random.esm";
 import { useTheme } from 'next-themes';
 
 const Sun = memo(({ scrollProgress }: { scrollProgress: number }) => {
-    const sunRef = useRef<any>();
-    const raysRef = useRef<any>();
-    const groupRef = useRef<any>();
+    const sunRef = useRef<any>(null);
+    const raysRef = useRef<any>(null);
+    const groupRef = useRef<any>(null);
     const [animationProgress, setAnimationProgress] = useState(0);
 
     useEffect(() => {
@@ -89,12 +89,14 @@ const Sun = memo(({ scrollProgress }: { scrollProgress: number }) => {
 Sun.displayName = 'Sun';
 
 const StarBackGround = memo((props:any) => {
-    const ref:any=useRef();
+    const ref:any=useRef(null);
+    const tilt:any=useRef(null);
     const { theme } = useTheme();
     const { scrollProgress } = props;
 
     // Memoize sphere generation - reduced from 5000 to 2000 particles for better performance
-    const sphere = useMemo(()=>random.inSphere(new Float32Array(2000), {radius:1.2}), []);
+    // Length MUST be a multiple of 3 (xyz triples) or maath yields NaN positions.
+    const sphere = useMemo(()=>random.inSphere(new Float32Array(2001), {radius:1.2}) as Float32Array, []);
 
     // Change star color and animation based on theme
     const starColor = theme === 'light' ? '#fbbf24' : '#fff';
@@ -103,6 +105,12 @@ const StarBackGround = memo((props:any) => {
 
     // Different animation for light mode - más suave y elegante
     useFrame((state, delta:any)=>{
+        // Pointer parallax — the whole field leans toward the cursor.
+        if (tilt.current) {
+            const lx = (a:number,b:number,t:number)=>a+(b-a)*t;
+            tilt.current.rotation.x = lx(tilt.current.rotation.x, state.pointer.y * 0.12, 0.03);
+            tilt.current.rotation.y = lx(tilt.current.rotation.y, state.pointer.x * 0.12, 0.03);
+        }
         if (ref.current) {
             if (theme === 'light') {
                 // Animación flotante suave para light mode
@@ -119,7 +127,7 @@ const StarBackGround = memo((props:any) => {
 
   return (
     <>
-        <group rotation={[0,0, Math.PI / 4]}>
+        <group ref={tilt} rotation={[0,0, Math.PI / 4]}>
             <Points
                 ref={ref}
                 positions={sphere}
@@ -137,9 +145,6 @@ const StarBackGround = memo((props:any) => {
                 />
             </Points>
         </group>
-        {theme === 'light' && (
-            <Sun scrollProgress={scrollProgress} />
-        )}
     </>
   )
 })
@@ -165,7 +170,7 @@ const StartCanvas = memo(()=>{
     }, []);
 
     return (
-        <div className='w-full h-auto fixed inset-0 z-[20] pointer-events-none'>
+        <div className='w-full h-auto fixed inset-0 z-[2] pointer-events-none'>
             <Canvas
                 camera={{position:[0,0,1]}}
                 dpr={[1, 2]} // Limit pixel ratio for better performance
